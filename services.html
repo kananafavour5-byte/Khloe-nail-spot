@@ -6,8 +6,6 @@
   <style>
     .visual { min-width: 0; }
     .waxing-photo { display:block; width:min(100%, 20rem); height:auto; max-height:25rem; object-fit:contain; margin-top:1rem; }
-    .clip-options { margin-top:.5rem; }
-    .clip-options summary { cursor:pointer; padding:.6rem 0; }
     .clip-link { display:inline-block; color:#242124; text-decoration-color:#B88A48; padding:.5rem 0; }
     .post-gallery { margin-top: 1rem; }
     .post-track {
@@ -272,7 +270,7 @@ https://www.tiktok.com/@khloe_nails_/video/7548408940887870726
         if (!match || seen.has(match[1])) continue;
         seen.add(match[1]);
         const player = document.createElement("iframe");
-        player.dataset.source = "https://www.tiktok.com/player/v1/" + match[1] +
+        player.src = "https://www.tiktok.com/player/v1/" + match[1] +
           "?description=0&music_info=0&controls=1&rel=0";
         player.title = slot.closest("section").querySelector("h2").textContent + " video " + (posts.length + 1);
         player.loading = "lazy";
@@ -286,12 +284,7 @@ https://www.tiktok.com/@khloe_nails_/video/7548408940887870726
         external.rel = "noopener";
         external.textContent = "Watch on TikTok ↗";
         external.setAttribute("aria-label", player.title + " — watch on TikTok");
-        const details = document.createElement("details");
-        details.className = "clip-options";
-        const summary = document.createElement("summary");
-        summary.textContent = "Play here";
-        details.append(summary, player);
-        clip.append(details, external);
+        clip.append(player, external);
         posts.push(clip);
       }
       posts.push(...slot.content.querySelectorAll('video, blockquote.instagram-media, iframe[src^="https://www.tiktok.com/player/v1/"]'));
@@ -306,14 +299,6 @@ https://www.tiktok.com/@khloe_nails_/video/7548408940887870726
         const slide = document.createElement("div");
         slide.className = "post-slide";
         const content = document.importNode(post, true);
-        const options = content.querySelector(".clip-options");
-        if (options) {
-          const frame = options.querySelector("iframe");
-          options.addEventListener("toggle", () => {
-            if (options.open) frame.src = frame.dataset.source;
-            else frame.removeAttribute("src");
-          });
-        }
         slide.append(content);
         track.append(slide);
       }
