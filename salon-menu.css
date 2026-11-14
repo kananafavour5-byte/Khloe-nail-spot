@@ -1,0 +1,95 @@
+:root {
+  --pink:#D90089; --gold:#B88A48; --ink:#242124; --paper:#FFFAFC;
+  --line:rgb(36 33 36 / 13%); --heading:'Cormorant Garamond', Georgia, serif;
+  --script:'Great Vibes', cursive; --copy:Lato, Arial, sans-serif;
+}
+* {box-sizing:border-box}
+html {scroll-behavior:smooth; scroll-padding-top:86px}
+body {margin:0; background:var(--paper); color:var(--ink); font:400 16px/1.5 var(--copy)}
+a {color:inherit; text-underline-offset:4px}
+a:focus-visible, summary:focus-visible {outline:2px solid var(--pink); outline-offset:4px}
+.skip {position:absolute; left:12px; top:-80px; z-index:4; padding:10px; background:var(--paper)}
+.skip:focus {top:8px}
+header {position:sticky; top:0; z-index:2; background:var(--paper); border-bottom:1px solid var(--line)}
+.header-inner,main,footer {max-width:1024px; width:calc(100% - 48px); margin-inline:auto}
+.header-inner {min-height:68px; display:flex; align-items:center; justify-content:space-between; gap:16px}
+.brand {display:grid; text-align:center; color:var(--pink); font:500 32px/.83 var(--heading); text-decoration:none}
+.brand em {font:400 27px/.94 var(--script); color:var(--gold)}
+header nav {display:flex; gap:clamp(16px,3vw,38px)}
+header nav a {font:400 17px/1.4 Georgia,serif; text-decoration:none; padding:10px 0; border-bottom:2px solid transparent}
+header nav [aria-current] {color:var(--pink); border-color:var(--pink)}
+main {padding-block:28px 32px}
+h1,h2,p,dl,dd {margin:0}
+h1,h2 {font-family:var(--heading); font-weight:500; color:var(--pink)}
+h1 {text-align:center; font-size:clamp(40px,4.4vw,56px); line-height:1.16; margin:0 0 24px}
+h1 em {font:400 1.12em/1 var(--script); color:var(--gold)}
+h2 {font-size:clamp(26px,2.6vw,34px); line-height:1.15}
+.categories {display:flex; justify-content:center; flex-wrap:wrap; gap:8px 18px; padding-bottom:24px}
+.categories a {display:grid; justify-items:center; align-content:end; gap:4px; width:clamp(74px,9vw,100px); padding:4px; font:500 19px/1.2 var(--heading); text-decoration:none}
+.categories a:hover,.categories a:focus-visible {color:var(--pink); text-decoration:underline}
+.art {display:block; width:58px; height:58px; background:url('assets/beauty-icons.png') 0% 50% / 500% auto no-repeat}
+.art.lashes {background-position-x:25%}.art.facials {background-position-x:50%}.art.wigs {background-position-x:75%}.art.waxing {background-position-x:100%}
+.menu-row,.visit {display:grid; grid-template-columns:minmax(0, .88fr) minmax(0, 1.12fr); gap:clamp(28px,5vw,64px); padding-block:26px; border-top:1px solid var(--line)}
+.service-media img {display:block; width:100%; height:auto; aspect-ratio:4/5; max-height:390px; object-fit:cover; margin-top:16px}
+.prices {list-style:none; margin:0; padding:0}
+.prices li + li,details {border-top:1px solid var(--line)}
+.prices a {display:flex; align-items:baseline; justify-content:space-between; gap:16px; padding:8px 0; text-decoration:none}
+.prices li:first-child a {padding-top:0}.prices strong {color:var(--pink); white-space:nowrap; font-variant-numeric:tabular-nums}
+.prices a:hover span {text-decoration:underline}summary {cursor:pointer; padding:9px 0; font-weight:700}details ul {padding-left:14px}
+.book {display:inline-flex; align-items:center; gap:8px; margin-top:16px; min-height:42px; padding:8px 20px; border-radius:24px; color:var(--paper); background:var(--pink); font:400 16px/1.4 Georgia,serif; text-decoration:none}
+.book img {filter:brightness(0) invert(1)}.book:hover {box-shadow:0 3px 10px rgb(217 0 137 / 20%)}
+.visit h2,.social h2 {margin-bottom:12px}.visit address {font-style:normal}.visit dl {margin-top:16px}.visit dl div {display:flex; justify-content:space-between; gap:12px; padding:7px 0; border-top:1px solid var(--line)}
+.visit iframe {width:100%; height:210px; display:block; border:0}.map-links {margin-top:8px; font-size:14px}.social {padding-block:22px; border-top:1px solid var(--line)}.social p {display:flex; flex-wrap:wrap; gap:8px 24px}
+footer {padding:16px 0; border-top:1px solid var(--line); font-size:13px}footer span {color:var(--gold); padding-inline:5px}
+@media(max-width:680px){
+  .header-inner,main,footer {width:calc(100% - 32px)} .header-inner {min-height:62px}header nav a {font-size:15px}.brand{font-size:27px}.brand em{font-size:24px}
+  main {padding-block:20px 24px}h1{margin-bottom:16px}.categories{gap:8px 4px;padding-bottom:18px}.categories a{width:22%;font-size:17px}.art{width:44px;height:44px}
+  .menu-row,.visit {grid-template-columns:1fr;gap:14px;padding-block:22px}.visit {gap:24px}.prices a{font-size:15px}.service-media img{max-height:320px}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+.swipe-gallery {
+  width: min(100%, 22rem);
+}
+
+.swipe-gallery img:not([hidden]) {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border-radius: 0.75rem;
+  touch-action: pan-y pinch-zoom;
+}
+
+.gallery-controls:not([hidden]) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.gallery-controls button {
+  width: 44px;
+  height: 44px;
+  border: 1px solid #B88A48;
+  border-radius: 50%;
+  background: #FFFAFC;
+  color: #242124;
+  font-size: 1.15rem;
+  cursor: pointer;
+}
+
+.gallery-controls button:hover,
+.gallery-controls button:focus-visible {
+  background: #D90089;
+  color: #FFFAFC;
+}
+
+.gallery-count {
+  min-width: 4rem;
+  text-align: center;
+  font-size: 0.875rem;
+  font-variant-numeric: tabular-nums;
+}

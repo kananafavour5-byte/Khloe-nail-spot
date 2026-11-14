@@ -1,0 +1,251 @@
+[
+  {
+    "id": "nails",
+    "name": "Nails",
+    "title": "Nails & Extensions",
+    "icon": "nails",
+    "items": [
+      [
+        "Gel",
+        500
+      ],
+      [
+        "Manicure + Gel",
+        1500
+      ],
+      [
+        "Tips + Gel",
+        1000
+      ],
+      [
+        "French Tips",
+        1500
+      ],
+      [
+        "Builder + Tips",
+        2500
+      ],
+      [
+        "Gumgel + Tips",
+        2500
+      ],
+      [
+        "Acrylic",
+        3500
+      ]
+    ],
+    "extras": [
+      {
+        "name": "Nail Art",
+        "items": [
+          [
+            "Drawing",
+            50
+          ],
+          [
+            "Charms + stones",
+            50
+          ],
+          [
+            "Ombré",
+            50
+          ],
+          [
+            "Chrome",
+            50
+          ],
+          [
+            "3D design",
+            100
+          ]
+        ]
+      },
+      {
+        "name": "Soak Off",
+        "items": [
+          [
+            "Gel removal",
+            100
+          ],
+          [
+            "Tips + gel removal",
+            150
+          ],
+          [
+            "Builder gel removal",
+            150
+          ],
+          [
+            "Gumgel removal",
+            150
+          ]
+        ]
+      },
+      {
+        "name": "Overlay",
+        "items": [
+          [
+            "Builder overlay",
+            1500
+          ],
+          [
+            "Gumgel overlay",
+            1500
+          ],
+          [
+            "Acrylic overlay",
+            2500
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "id": "lashes",
+    "name": "Lashes",
+    "title": "Lashes",
+    "icon": "lashes",
+    "items": [
+      [
+        "Removal",
+        500
+      ],
+      [
+        "Refill",
+        700
+      ],
+      [
+        "Classic set",
+        1500
+      ],
+      [
+        "Volume set",
+        1500
+      ],
+      [
+        "Cat-eye set",
+        1500
+      ]
+    ]
+  },
+  {
+    "id": "pedicures",
+    "name": "Pedicures",
+    "title": "Pedicures",
+    "icon": "nails",
+    "items": [
+      [
+        "Classic pedicure",
+        1000
+      ],
+      [
+        "Lemon luxe pedicure",
+        1500
+      ],
+      [
+        "Honey luxe pedicure",
+        2000
+      ],
+      [
+        "Jelly luxe pedicure",
+        2000
+      ],
+      [
+        "Honey jelly royal pedicure",
+        2500
+      ]
+    ]
+  },
+  {
+    "id": "wigs",
+    "name": "Wigs",
+    "title": "Wig Glam",
+    "icon": "wigs",
+    "items": [
+      [
+        "Wig wash & refresh",
+        1000
+      ],
+      [
+        "Wig styling",
+        700
+      ],
+      [
+        "Basic installation",
+        1000
+      ],
+      [
+        "Premium installation",
+        1500
+      ]
+    ]
+  },
+  {
+    "id": "facials",
+    "name": "Facials",
+    "title": "Facials",
+    "icon": "facials",
+    "items": [
+      [
+        "Purity glow facial",
+        1000
+      ],
+      [
+        "Silk exfoliation facial",
+        1000
+      ],
+      [
+        "Royal steam detox facial",
+        1000
+      ],
+      [
+        "Royal hydra glow facial",
+        1500
+      ]
+    ]
+  },
+  {
+    "id": "brows",
+    "name": "Brows",
+    "title": "Brow Couture",
+    "icon": "lashes",
+    "items": [
+      [
+        "Eyebrow shaping",
+        100
+      ],
+      [
+        "Eyebrow tinting",
+        300
+      ],
+      [
+        "Shaping + tinting",
+        400
+      ],
+      [
+        "Brow lamination",
+        2000
+      ]
+    ]
+  },
+  {
+    "id": "waxing",
+    "name": "Waxing",
+    "title": "Waxing",
+    "icon": "waxing",
+    "items": [
+      [
+        "Underarm smooth wax",
+        500
+      ],
+      [
+        "Classic bikini wax",
+        800
+      ],
+      [
+        "Brazilian luxury wax",
+        1000
+      ]
+    ]
+  }
+]
