@@ -27,12 +27,48 @@
       font: 20px/1 sans-serif; cursor: pointer;
     }
     .post-arrow:hover, .post-arrow:focus-visible { color: #D90089; }
+    .post-slide .service-gallery-photo {
+      display:block; width:100%; height:25rem; max-height:65svh;
+      object-fit:contain; object-position:left center;
+    }
+    .brow-reference { margin:0; }
+    .brow-reference figcaption { margin-top:.5rem; font-size:12px; line-height:1.5; }
   </style>
 <style>
     .post-slide iframe.tiktok-player { display:block; border:0; aspect-ratio:9/16; height:auto; max-width:min(100%, 16rem) !important; }
     .post-slide video { display:block; width:100%; height:auto;
       max-height:min(60vh, 28rem); object-fit:contain; }
-    </style></head><body>
+    </style><style id="matching-gallery-size">
+    .post-gallery { width: min(100%, 16rem); }
+    .post-gallery .post-slide .service-gallery-photo,
+    .post-gallery .post-slide iframe.tiktok-player,
+    .post-gallery .post-slide video {
+      display: block;
+      width: 100% !important;
+      max-width: 100% !important;
+      min-width: 0 !important;
+      height: auto;
+      min-height: 0;
+      max-height: none;
+      aspect-ratio: 9 / 16;
+      margin: 0 !important;
+      border: 0;
+      box-sizing: border-box;
+      object-fit: contain;
+      object-position: center;
+    }
+    .post-gallery .brow-reference { margin: 0; }
+    </style>
+<style id="balanced-service-spacing">
+    .menu-row { align-items: center; }
+    .menu-row .treatments { align-self: center; min-width: 0; }
+    .menu-row .post-track { padding-bottom: 0; }
+    .menu-row .post-arrow { margin-block: 0; }
+    @media (max-width: 680px) {
+      .menu-row .treatments { align-self: start; }
+    }
+    </style>
+</head><body>
   <a class="skip" href="#main">Skip to content</a>
   <header><div class="header-inner"><a class="brand" href="index.html" aria-label="Khloe Nail Spot home">KHLOE<em>Nail Spot</em></a>
     <nav aria-label="Main navigation"><a href="index.html">Home</a>
@@ -61,6 +97,9 @@ https://www.tiktok.com/@khloe_nails_/video/7559259544937860408
         
         <template class="instagram-posts">
           <!-- PASTE NAILS INSTAGRAM EMBEDS BELOW THIS LINE -->
+          <img class="service-gallery-photo" src="assets/service-photos/nails-01.png" alt="Pink and mint nail extensions at Khloe Nail Spot" loading="lazy" decoding="async">
+          <img class="service-gallery-photo" src="assets/service-photos/nails-02.png" alt="Burgundy and patterned manicure at Khloe Nail Spot" loading="lazy" decoding="async">
+          <img class="service-gallery-photo" src="assets/service-photos/nails-03.png" alt="Pink floral nail art at Khloe Nail Spot" loading="lazy" decoding="async">
            
 
           <!-- END NAILS INSTAGRAM EMBEDS -->
@@ -109,6 +148,8 @@ https://www.tiktok.com/@khloe_nails_/video/7609360108098735380
         </script>
         <template class="instagram-posts">
           <!-- PASTE LASHES INSTAGRAM EMBEDS BELOW THIS LINE -->
+          <img class="service-gallery-photo" src="assets/service-photos/lashes-01.png" alt="Lash extensions close-up at Khloe Nail Spot" loading="lazy" decoding="async">
+          <img class="service-gallery-photo" src="assets/service-photos/lashes-02.png" alt="Finished lash set at Khloe Nail Spot" loading="lazy" decoding="async">
 
           <!-- END LASHES INSTAGRAM EMBEDS -->
         </template>
@@ -137,6 +178,7 @@ https://www.tiktok.com/@khloe_nails_/video/7687317330363239701
         
         <template class="instagram-posts">
           <!-- PASTE PEDICURES INSTAGRAM EMBEDS BELOW THIS LINE -->
+          <img class="service-gallery-photo" src="assets/service-photos/pedicures-01.png" alt="Salon pedicure treatment at Khloe Nail Spot" loading="lazy" decoding="async">
 
           <!-- END PEDICURES INSTAGRAM EMBEDS -->
         </template>
@@ -166,6 +208,9 @@ https://www.tiktok.com/@khloe_nails_/video/7622950032538340628
         </script>
         <template class="instagram-posts">
           <!-- PASTE WIGS INSTAGRAM EMBEDS BELOW THIS LINE -->
+          <img class="service-gallery-photo" src="assets/service-photos/wigs-01.png" alt="Burgundy styled wig at Khloe Nail Spot" loading="lazy" decoding="async">
+          <img class="service-gallery-photo" src="assets/service-photos/wigs-02.png" alt="Sleek burgundy bob wig at Khloe Nail Spot" loading="lazy" decoding="async">
+          <img class="service-gallery-photo" src="assets/service-photos/wigs-03.png" alt="Black styled wig at Khloe Nail Spot" loading="lazy" decoding="async">
 
           <!-- END WIGS INSTAGRAM EMBEDS -->
         </template>
@@ -192,6 +237,7 @@ https://www.tiktok.com/@khloe_nails_/video/7519420362476489992
         </script>
         <template class="instagram-posts">
           <!-- PASTE FACIALS INSTAGRAM EMBEDS BELOW THIS LINE -->
+          <img class="service-gallery-photo" src="assets/service-photos/facials-01.png" alt="LED facial treatment at Khloe Nail Spot" loading="lazy" decoding="async">
 
           <!-- END FACIALS INSTAGRAM EMBEDS -->
         </template>
@@ -218,6 +264,9 @@ https://www.tiktok.com/@khloe_nails_/video/7548408940887870726
         </script>
         <template class="instagram-posts">
           <!-- PASTE BROWS INSTAGRAM EMBEDS BELOW THIS LINE -->
+          <figure class="brow-reference">
+            <img class="service-gallery-photo" src="assets/service-photos/brows-portrait.png" alt="Beauty portrait supplied for the Brows gallery" loading="lazy" decoding="async">
+          </figure>
 
           <!-- END BROWS INSTAGRAM EMBEDS -->
         </template>
@@ -264,7 +313,7 @@ https://www.tiktok.com/@khloe_nails_/video/7548408940887870726
     // Templates accept the complete copied embed. Load Instagram's player once.
     let hasPosts = false;
     for (const slot of document.querySelectorAll("template.instagram-posts")) {
-      const posts = [];
+      const posts = Array.from(slot.content.querySelectorAll("img.service-gallery-photo:not(figure img), figure.brow-reference"));
       const links = Array.from(slot.closest("section").querySelectorAll("script.tiktok-links"), block => block.textContent).join(" ");
       const seen = new Set();
       for (const line of links.trim().split(/\s+/)) {
@@ -272,7 +321,7 @@ https://www.tiktok.com/@khloe_nails_/video/7548408940887870726
         if (!match || seen.has(match[1])) continue;
         seen.add(match[1]);
         const player = document.createElement("iframe");
-        player.src = "https://www.tiktok.com/player/v1/" + match[1] +
+        player.dataset.src = "https://www.tiktok.com/player/v1/" + match[1] +
           "?description=0&music_info=0&controls=1&rel=0";
         player.title = slot.closest("section").querySelector("h2").textContent + " video " + (posts.length + 1);
         player.loading = "lazy";
@@ -305,6 +354,21 @@ https://www.tiktok.com/@khloe_nails_/video/7548408940887870726
         track.append(slide);
       }
       slot.after(gallery);
+      // Load each TikTok only when its slide is visible on the page.
+      const frames = gallery.querySelectorAll("iframe[data-src]");
+      if ("IntersectionObserver" in window) {
+        const observer = new IntersectionObserver(entries => {
+          for (const entry of entries) {
+            if (!entry.isIntersecting) continue;
+            const frame = entry.target;
+            frame.src = frame.dataset.src;
+            observer.unobserve(frame);
+          }
+        }, { threshold: 0.2 });
+        frames.forEach(frame => observer.observe(frame));
+      } else {
+        frames.forEach(frame => { frame.src = frame.dataset.src; });
+      }
       if (slot.content.querySelector("blockquote.instagram-media")) hasPosts = true;
       if (posts.length === 1) continue;
 
